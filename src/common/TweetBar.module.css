@@ -1,0 +1,20 @@
+.tweetbar{
+    display: flex;
+    justify-content: space-between;
+    color:var(--fontColor);
+    padding-right: 50px;
+    align-items: center;
+}
+.tweetbar__item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.tweetbar__icons{
+    width: 15px;
+}
+.tweetbar__item:hover{
+    color: var(--errorColor);
+
+}

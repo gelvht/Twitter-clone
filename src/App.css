@@ -1,0 +1,5 @@
+@import "./common/variable.css";
+.App{
+    font-size: var(--fontSize);
+    font-family: var(--fontFamily);
+}

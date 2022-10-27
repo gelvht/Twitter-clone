@@ -1,0 +1,29 @@
+.profile__header {
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+  color: var(--fontColor);
+  gap: 10px;
+  border-bottom: 1px solid var(--primaryColor);
+}
+.profile__body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.profile__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile__username {
+  font-weight: 800;
+}
+.profile__createdDate {
+  display: flex;
+  align-items: center;
+}
+.profile__follow {
+  margin-right: 20px;
+}

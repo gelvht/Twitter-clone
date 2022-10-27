@@ -1,0 +1,5 @@
+.result{
+    border: 1px solid var(--primaryColor);
+    margin-top: 20px;
+    width: 100%;
+}
