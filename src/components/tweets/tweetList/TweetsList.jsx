@@ -1,4 +1,4 @@
-import Tweet from "./Tweet";
+import Tweet from "../tweet/Tweet";
 
 const TweetsList = ({ tweets }) => {
   const tweetItems = tweets.map((tweet) => {
@@ -15,6 +15,7 @@ const TweetsList = ({ tweets }) => {
       />
     );
   });
+
   return <>{tweetItems}</>;
 };
 export default TweetsList;

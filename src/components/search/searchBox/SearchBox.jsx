@@ -1,27 +1,33 @@
-import { Search } from "@emotion-icons/bootstrap/Search";
 import { useState } from "react";
-import { GetUserAPI, GetTweetAPI } from "../../Api/Services";
-import SearchResult from "./SerachResult";
+
+import { Search } from "@emotion-icons/bootstrap/Search";
+
 import "./searchBox.css";
+import { GetUserAPI, GetTweetAPI } from "../../../Api/Services";
+import SearchResult from "../searchResult/SerachResult";
+
 const SearchBox = () => {
   const [searchValue, setSearchValue] = useState("");
   const [searchOption, setSearchOption] = useState("user");
   const [error, setError] = useState("");
   const [result, setResult] = useState();
+
   const userSearch = async () => {
     try {
       await GetUserAPI(searchValue).then(
         (response) => {
-          setResult({username:searchValue,user:response.data});
+          setResult({ username: searchValue, user: response.data });
         },
-        (error) => {setError(error.response.data.message);
-        setResult()
+        (error) => {
+          setError(error.response.data.message);
+          setResult();
         }
       );
     } catch (err) {
       console.log(err);
     }
   };
+
   const tweetSearch = async () => {
     try {
       await GetTweetAPI(searchValue).then(
@@ -35,6 +41,7 @@ const SearchBox = () => {
       console.log(err);
     }
   };
+
   const submitSearch = (e) => {
     if (e.keyCode == 13) {
       if (searchOption === "user") {
@@ -44,6 +51,7 @@ const SearchBox = () => {
       }
     }
   };
+
   return (
     <section className="searchbox">
       <div className="searchbox__input">
@@ -85,4 +93,5 @@ const SearchBox = () => {
     </section>
   );
 };
+
 export default SearchBox;

@@ -1,13 +1,17 @@
 import { useState } from "react";
-import { GetFollowAPI } from "../../Api/Services";
-import ProfileImage from "../../common/ProfileImage";
+
 import classes from "./ProfileInfo.module.css";
-const ProfileInfo = ({ username, bio, following, followers, createdDate }) => {
+
+import { GetFollowAPI } from "../../../Api/Services";
+import ProfileImage from "../profileImage/ProfileImage";
+
+const ProfileInfo = ({ username, following, followers }) => {
   const [buttonText, setButtonText] = useState({
     class: "btn__blue",
     text: "Follow",
   });
   const [errorMessage, setErrorMessage] = useState();
+
   const followHandler = async () => {
     try {
       await GetFollowAPI(username).then(
@@ -22,6 +26,7 @@ const ProfileInfo = ({ username, bio, following, followers, createdDate }) => {
       console.log(err);
     }
   };
+
   return (
     <div className={classes.profile__header}>
       <div className={classes.profile__body}>
@@ -36,11 +41,6 @@ const ProfileInfo = ({ username, bio, following, followers, createdDate }) => {
           </button>
         </div>
         <h2 className={classes.profile__username}>{username}</h2>
-        {/* <p className={classes.profile__bio}>{bio}</p> */}
-        {/* <div className={classes.profile__createdDate}>
-          <span className="material-symbols-outlined">calendar_month</span>
-          Joined {createdDate}
-        </div> */}
         <div>
           <span className={classes.profile__follow}>{following} following</span>
           <span>{followers} followers</span>
@@ -49,4 +49,5 @@ const ProfileInfo = ({ username, bio, following, followers, createdDate }) => {
     </div>
   );
 };
+
 export default ProfileInfo;

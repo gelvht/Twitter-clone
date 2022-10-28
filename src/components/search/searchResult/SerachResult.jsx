@@ -1,8 +1,9 @@
-import ProfileInfo from "../profile/ProfileInfo";
-import TweetsList from "../tweets/TweetsList";
 import "./SearchResult.css";
+
+import ProfileInfo from "../../profile/profileInfo/ProfileInfo";
+import TweetsList from "../../tweets/tweetList/TweetsList";
+
 const SearchResult = ({ username, user }) => {
-  console.log(username, user);
   return (
     <div className="result">
       <ProfileInfo

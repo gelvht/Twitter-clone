@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+}
+.home__tweets {
+  flex-basis: 70%;
+  padding-top: 1%;
+  border-right: 1px solid var(--primaryColor);
+  border-left: 1px solid var(--primaryColor);
+}
+.home__tweets__title {
+  margin-left: 15px;
+  font-size: 1.2em;
+  margin-bottom: 1%;
+}

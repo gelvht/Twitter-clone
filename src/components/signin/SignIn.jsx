@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { LoginAPI } from "../../Api/Api";
-import Input from "../../common/Input";
+
 import "./SignIn.css";
+import { LoginAPI } from "../../Api/Api";
+import Input from "../common/input/Input";
+
 const SignIn = () => {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");

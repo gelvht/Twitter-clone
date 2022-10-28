@@ -8,9 +8,9 @@
 .messages {
   font-weight: 700;
 }
-.error{
+.error {
   color: var(--errorColor);
 }
-.success{
+.success {
   color: var(--successColor);
 }

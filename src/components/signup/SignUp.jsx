@@ -1,12 +1,16 @@
 import { useState } from "react";
-import { SignUpAPI } from "../../Api/Api";
-import Input from "../../common/Input";
+
 import "../signin/SignIn.css";
+
+import Input from "../common/input/Input";
+import { SignUpAPI } from "../../Api/Api";
+
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [messages, setmessages] = useState({ class: "", message: "" });
+
   const registerHandler = async (e) => {
     e.preventDefault();
     try {
@@ -16,7 +20,7 @@ const SignUp = () => {
         },
         (error) => {
           console.log(error);
-          // setmessages({class:"error", message:error.response.data.message});
+          // setmessages({class:"error", message:error.response.message});
         }
       );
     } catch (err) {

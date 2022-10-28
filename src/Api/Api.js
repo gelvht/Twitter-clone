@@ -14,6 +14,7 @@ export const LoginAPI = (username, password) =>
       }
       return response;
     });
+
 export const SignUpAPI = (email, username, password) =>
   axios
     .post(`${api}/signup/`, {
@@ -35,4 +36,3 @@ export const Logout = () => {
 export const getUser = () => {
   return JSON.parse(localStorage.getItem("user"));
 };
-
